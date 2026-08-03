@@ -1,0 +1,356 @@
+.dashboard-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dashboard-header h2 {
+  font-family: var(--font-secondary);
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.dashboard-header .subtitle {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.create-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+/* Empty Dashboard State */
+.empty-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto;
+  gap: 16px;
+}
+
+.empty-icon-box {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.empty-dashboard h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.empty-dashboard p {
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  max-width: 400px;
+}
+
+/* Cards Grid */
+.resumes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.resume-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: visible; /* to allow dropdown overflow */
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  position: relative;
+}
+
+.resume-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-glow);
+}
+
+.resume-card-body {
+  padding: 24px;
+  flex: 1;
+}
+
+.resume-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.resume-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-card-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-doc-icon {
+  color: var(--primary-color);
+}
+
+.card-menu-container {
+  position: relative;
+}
+
+.card-menu-trigger {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.card-menu-trigger:hover {
+  background-color: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.card-dropdown {
+  position: absolute;
+  right: 0;
+  top: 32px;
+  width: 160px;
+  border-radius: var(--radius-md);
+  padding: 6px;
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  width: 100%;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.card-dropdown-item:hover {
+  background-color: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.card-dropdown-item.delete-btn {
+  color: var(--danger-color);
+}
+
+.card-dropdown-item.delete-btn:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.resume-title-label {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.resume-template-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.resume-template-label span {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.resume-card-footer {
+  padding: 14px 24px;
+  border-top: 1px solid var(--border-color);
+  background-color: rgba(0, 0, 0, 0.15);
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+[data-theme='light'] .resume-card-footer {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.last-edited {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* Score badge types */
+.ats-badge-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.ats-high {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--success-color);
+}
+
+.ats-mid {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--warning-color);
+}
+
+.ats-low {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--danger-color);
+}
+
+/* Modals forms */
+.create-resume-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: rgba(0, 0, 0, 0.15);
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: all var(--transition-fast);
+}
+
+.form-group input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+.template-selectors {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  max-height: 240px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.template-select-item {
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--text-secondary);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.template-select-item:hover {
+  background-color: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.template-select-item.selected {
+  border-color: var(--primary-color);
+  background-color: rgba(99, 102, 241, 0.08);
+  color: var(--text-primary);
+}
+
+.check-icon {
+  position: absolute;
+  right: 12px;
+  color: var(--primary-color);
+}
+
+.create-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.cancel-btn {
+  padding: 10px 18px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color var(--transition-fast);
+}
+
+.cancel-btn:hover {
+  background-color: var(--bg-card);
+}
+
+.start-btn {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+.danger-btn {
+  background: var(--danger-color) !important;
+}
+
+.danger-btn:hover {
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.4) !important;
+}
