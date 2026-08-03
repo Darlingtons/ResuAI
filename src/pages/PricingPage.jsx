@@ -35,7 +35,7 @@ export const PricingPage = () => {
       const response = await fetch(`${BACKEND_URL}/api/create-order`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: amountInCents, currency: "USD" })
+        body: JSON.stringify({ amount: amountInCents, currency: "INR" })
       });
       
       const order = await response.json();
@@ -78,6 +78,11 @@ export const PricingPage = () => {
         theme: {
           color: "#6366f1",
         },
+        modal: {
+          ondismiss: function () {
+            alert("Payment cancelled. You can try upgrading again whenever you are ready.");
+          }
+        }
       };
 
       const rzp = new window.Razorpay(options);

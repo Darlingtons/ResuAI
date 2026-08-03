@@ -4,6 +4,7 @@ const cors = require('cors');
 const Razorpay = require('razorpay');
 const crypto = require('crypto');
 const admin = require('firebase-admin');
+const { getFirestore } = require('firebase-admin/firestore');
 // Initialize Firebase Admin SDK
 try {
   const serviceAccount = require('./serviceAccountKey.json');
@@ -51,9 +52,13 @@ app.post('/api/create-order', async (req, res) => {
       return res.status(500).json({ error: "Server is missing Razorpay keys in .env" });
     }
 
+    if (typeof amount !== 'number' || amount < 100) {
+      return res.status(400).json({ error: "Amount is required and must be at least 100 paise." });
+    }
+
     const options = {
       amount: amount, // amount in smallest currency unit (paise/cents)
-      currency: currency || "USD",
+      currency: currency || "INR",
       receipt: receipt || "receipt_" + Math.random().toString(36).substring(7),
     };
 
@@ -61,6 +66,9 @@ app.post('/api/create-order', async (req, res) => {
     res.json(order);
   } catch (error) {
     console.error("Order Creation Error:", error);
+    if (error.statusCode === 401 || (error.error && error.error.description && error.error.description.includes("API key"))) {
+      return res.status(401).json({ error: "Razorpay authentication failed. Please verify API keys." });
+    }
     res.status(500).json({ error: error.message });
   }
 });
@@ -69,8 +77,11 @@ app.post('/api/create-order', async (req, res) => {
 app.post('/api/verify-payment', async (req, res) => {
   const { razorpay_order_id, razorpay_payment_id, razorpay_signature, userId } = req.body;
 
-  if (!userId) {
-    return res.status(400).json({ success: false, message: "Missing userId in request body!" });
+  if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature || !userId) {
+    return res.status(400).json({ 
+      success: false, 
+      message: "Missing required fields: razorpay_order_id, razorpay_payment_id, razorpay_signature, and userId are required." 
+    });
   }
 
   const body = razorpay_order_id + "|" + razorpay_payment_id;
@@ -83,9 +94,9 @@ app.post('/api/verify-payment', async (req, res) => {
   const isAuthentic = expectedSignature === razorpay_signature;
 
   if (isAuthentic) {
-    if (admin.apps.length > 0) {
+    if (admin.getApps().length > 0) {
       try {
-        const db = admin.firestore();
+        const db = getFirestore();
         const renewalDate = new Date();
         renewalDate.setFullYear(renewalDate.getFullYear() + 1);
 
