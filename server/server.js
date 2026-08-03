@@ -110,7 +110,11 @@ app.post('/api/verify-payment', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Secure Payment Backend running on http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  const PORT = process.env.PORT || 3001;
+  app.listen(PORT, () => {
+    console.log(`Secure Payment Backend running on http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;

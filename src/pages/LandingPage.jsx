@@ -476,7 +476,7 @@ export const LandingPage = () => {
             <div className="pricing-teaser-card pro">
               <div className="card-badge">RECOMMENDED</div>
               <h4>Pro Plan</h4>
-              <p className="price">$12 <span>/ mo</span></p>
+              <p className="price">$5 <span>/ mo</span></p>
               <ul>
                 <li><Check size={14} /> All 6 Premium Templates</li>
                 <li><Check size={14} /> Live AI Bullet Generator</li>

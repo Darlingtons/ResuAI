@@ -26,10 +26,13 @@ export const PricingPage = () => {
 
     const price = isYearly ? 40 : 5;
     const amountInCents = price * 100;
+    const BACKEND_URL = import.meta.env.PROD 
+      ? window.location.origin 
+      : 'http://localhost:3001';
 
     try {
       // 1. Get Secure Order ID from Backend
-      const response = await fetch('http://localhost:3001/api/create-order', {
+      const response = await fetch(`${BACKEND_URL}/api/create-order`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: amountInCents, currency: "USD" })
@@ -49,7 +52,7 @@ export const PricingPage = () => {
         description: isYearly ? "Pro Plan (Yearly)" : "Pro Plan (Monthly)",
         handler: async function (response) {
           // 3. Verify Signature Securely on the Backend
-          const verifyRes = await fetch('http://localhost:3001/api/verify-payment', {
+          const verifyRes = await fetch(`${BACKEND_URL}/api/verify-payment`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -116,7 +119,7 @@ export const PricingPage = () => {
             <span className="billing-switch-slider"></span>
           </button>
           <span className={isYearly ? 'active-billing' : ''}>
-            Yearly <span className="discount-tag">Save 20%</span>
+            Yearly <span className="discount-tag">Save 33%</span>
           </span>
         </div>
       </div>
