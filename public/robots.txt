@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /settings
+Disallow: /builder
+
+# Sitemap
+Sitemap: https://www.onlineresuai.co/sitemap.xml
