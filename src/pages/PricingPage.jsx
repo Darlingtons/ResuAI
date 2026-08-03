@@ -24,7 +24,7 @@ export const PricingPage = () => {
       return;
     }
 
-    const price = isYearly ? 40 : 5;
+    const price = isYearly ? 15 : 2;
     const amountInCents = price * 100;
     const BACKEND_URL = import.meta.env.PROD 
       ? window.location.origin 
@@ -35,7 +35,7 @@ export const PricingPage = () => {
       const response = await fetch(`${BACKEND_URL}/api/create-order`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: amountInCents, currency: "INR" })
+        body: JSON.stringify({ amount: amountInCents, currency: "USD" })
       });
       
       const order = await response.json();
@@ -103,8 +103,8 @@ export const PricingPage = () => {
     navigate('/dashboard');
   };
 
-  const price = isYearly ? 40 : 5; // $40/year vs $5/month
-  const savedAmt = isYearly ? 20 : 0; // save $20/year
+  const price = isYearly ? 15 : 2; // $15/year vs $2/month
+  const savedAmt = isYearly ? 9 : 0; // save $9/year
 
   return (
     <div className="pricing-page">

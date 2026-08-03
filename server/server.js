@@ -58,7 +58,7 @@ app.post('/api/create-order', async (req, res) => {
 
     const options = {
       amount: amount, // amount in smallest currency unit (paise/cents)
-      currency: currency || "INR",
+      currency: currency || "USD",
       receipt: receipt || "receipt_" + Math.random().toString(36).substring(7),
     };
 
