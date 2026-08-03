@@ -179,16 +179,28 @@ export const LandingPage = () => {
 
   const faqs = [
     {
+      q: "what is a cover letter",
+      a: "A cover letter is a one-page professional document submitted alongside your resume during a job application. Its purpose is to introduce you to the hiring manager, outline your career motivation, expand on key achievements from your resume, and explain why you are the best fit for the specific job role."
+    },
+    {
+      q: "how to write a cover letter",
+      a: "To write an effective cover letter, start with a professional header containing your contact details and the recipient's info. Address the hiring manager by name, open with a strong introduction highlighting your interest, write one or two body paragraphs showing relevant achievements matched to the job description, and close with a call-to-action requesting an interview."
+    },
+    {
+      q: "how to build a resume",
+      a: "To build a professional resume, start by choosing a clean, ATS-compliant online resume template. Fill in your contact info, write a concise professional summary, detail your work experience in reverse chronological order using action verbs and metrics, outline your education and certifications, and list your top technical and soft skills."
+    },
+    {
       q: "Is ResuAI free to use?",
-      a: "Yes, you can build, customize, and export standard resumes using our Classic layout completely free of charge. Pro templates and real-time AI generation require a premium license."
+      a: "Yes, ResuAI is free to use. You can build, customize, and download standard resumes using our Classic template layout completely free of charge. Premium templates, custom color/font configuration, and real-time AI optimizations are available through our Pro plan."
     },
     {
       q: "How does the ATS Checker compute scores?",
-      a: "Our ATS parser checks your resume against the uploaded job description. It rates you based on formatting, experience depth, and lists matching versus missing keywords that recruiters search for."
+      a: "Our resume ATS check system scans your CV, parses the text structure, and cross-references it with your target job description. It rates your alignment score based on design format, chronological completeness, and matches of critical keywords and skills that applicant tracking systems look for."
     },
     {
       q: "Can I download my resume as a PDF?",
-      a: "Absolutely! Our builder uses custom A4 CSS stylesheets. When you download as PDF, it uses the system print dialog for a clean vector export without formatting shifts."
+      a: "Yes, you can easily download your resume as a PDF. Our online resume builder uses professional A4 print styling. When you trigger the download, it formats the design into a clean vector print format which you can save as a PDF directly from your browser's print dialog."
     }
   ];
 
@@ -577,6 +589,64 @@ export const LandingPage = () => {
           </div>
         )}
       </Dialog>
+
+      {/* JSON-LD FAQ SEO SCHEMA */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a cover letter?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<p>A cover letter is a one-page professional document submitted alongside your resume during a job application. Its purpose is to introduce you to the hiring manager, outline your career motivation, expand on key achievements from your resume, and explain why you are the best fit for the specific job role.</p>"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How to write a cover letter?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<p>To write an effective cover letter, start with a professional header containing your contact details and the recipient's info. Address the hiring manager by name, open with a strong introduction highlighting your interest, write one or two body paragraphs showing relevant achievements matched to the job description, and close with a call-to-action requesting an interview.</p>"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How to build a resume?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<p>To build a professional resume, start by choosing a clean, ATS-compliant online resume template. Fill in your contact info, write a concise professional summary, detail your work experience in reverse chronological order using action verbs and metrics, outline your education and certifications, and list your top technical and soft skills.</p>"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is ResuAI free to use?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<p>Yes, ResuAI is free to use. You can build, customize, and download standard resumes using our Classic template layout completely free of charge. Premium templates, custom color/font configuration, and real-time AI optimizations are available through our Pro plan.</p>"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does the ATS Checker compute scores?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<p>Our resume ATS check system scans your CV, parses the text structure, and cross-references it with your target job description. It rates your alignment score based on design format, chronological completeness, and matches of critical keywords and skills that applicant tracking systems look for.</p>"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I download my resume as a PDF?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<p>Yes, you can easily download your resume as a PDF. Our online resume builder uses professional A4 print styling. When you trigger the download, it formats the design into a clean vector print format which you can save as a PDF directly from your browser's print dialog.</p>"
+              }
+            }
+          ]
+        })}
+      </script>
     </div>
   );
 };
