@@ -476,7 +476,7 @@ export const LandingPage = () => {
             <div className="pricing-teaser-card pro">
               <div className="card-badge">RECOMMENDED</div>
               <h4>Pro Plan</h4>
-              <p className="price">$5 <span>/ mo</span></p>
+              <p className="price">$2 <span>/ mo</span></p>
               <ul>
                 <li><Check size={14} /> All 6 Premium Templates</li>
                 <li><Check size={14} /> Live AI Bullet Generator</li>
@@ -512,6 +512,45 @@ export const LandingPage = () => {
               {activeFaq === idx && <p className="faq-answer">{f.a}</p>}
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* SEO ARTICLE SECTION */}
+      <section className="seo-article-section">
+        <div className="seo-article-container glassmorphism" style={{ padding: '40px', borderRadius: 'var(--radius-lg)' }}>
+          <h2>The Ultimate Online Resume Builder for Modern Job Seekers</h2>
+          <p>
+            In today's highly competitive job market, standing out to recruiters requires more than just listing your work history. You need a fast, reliable, and intelligent <strong>online resume builder</strong> to present your qualifications effectively. ResuAI is designed to be the <strong>best online resume builder</strong>, combining modern design elements with advanced AI features. It functions not only as a state-of-the-art <strong>online resume maker</strong> but also as an integrated career suite.
+          </p>
+
+          <h3>Select the Perfect Online Resume Template</h3>
+          <p>
+            The visual appeal of your CV is a recruiter's first impression. ResuAI offers a curated selection of premium <strong>online resume template</strong> layouts tailored for different industries, including technology, business, design, and entry-level positions. Every <strong>online resume template</strong> in our library is engineered to follow professional typesetting principles, ensuring readability and correct font hierarchy. If you are just starting your career or want to test our editor, you can access our <strong>online resume builder free</strong> tier, which offers classic designs to get you hired without any upfront cost.
+          </p>
+
+          <h3>Secure Your Interview with a Built-in ATS Check</h3>
+          <p>
+            Did you know that over 70% of resumes are filtered out by Applicant Tracking Systems (ATS) before a human recruiter even sees them? That's why ResuAI integrates a comprehensive <strong>resume ats check</strong> directly into the builder. Our tool scans your text, maps it against target job descriptions, and provides an instant <strong>ats check resume</strong> score with specific keyword recommendations. 
+          </p>
+          <p>
+            Using our <strong>ats check</strong> suite, you can run a <strong>free ats check</strong> to highlight missing skills, adjust formatting flaws, and optimize your CV to rank highly. This real-time <strong>ats check resume</strong> system gives you the diagnostic insight needed to bypass automated filters and land your resume in the hands of hiring managers.
+          </p>
+
+          <h3>Draft a Tailored Cover Letter in Minutes</h3>
+          <p>
+            A strong resume is only half the battle. To maximize your callback rate, pairing your application with a customized <strong>cover letter</strong> is essential. ResuAI provides a state-of-the-art AI cover letter generator that analyzes your resume achievements alongside the job description. 
+          </p>
+          <p>
+            You can choose from our professional <strong>cover letter templates</strong> to ensure that your header and style align perfectly with your resume. Each <strong>cover letter template</strong> is built to follow the recommended <strong>cover letter format</strong>, including formal headings, opening hooks, key achievements, and a strong call-to-action. By using our structured <strong>cover letter templates</strong>, you save hours of writing while maintaining a consistent and highly professional design across all application documents.
+          </p>
+
+          <h3>Elevate Your Job Search with ResuAI</h3>
+          <p>
+            Creating a resume is historically a tedious chore, but it does not have to be. By utilizing our <strong>best online resume builder</strong>, you gain access to an intuitive workspace that walks you through compiling your personal details, work history, education, certifications, and projects. As you type, the layout renders dynamically in an A4 paper layout preview, showing you exactly how the final printed PDF will look. Our templates are responsive and respect white-space rules, ensuring your content never overflows awkwardly to a second page.
+          </p>
+          <p>
+            Our <strong>online resume maker</strong> also takes care of margins, line heights, and padding automatically, allowing you to focus purely on writing high-impact bullet points. Combined with a professional <strong>cover letter format</strong>, your application files will look cohesive and polished. Start building today and unlock your potential with our robust <strong>online resume builder free</strong> features, and take control of your career trajectory.
+          </p>
         </div>
       </section>
 

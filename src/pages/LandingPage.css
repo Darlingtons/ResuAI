@@ -943,4 +943,45 @@
   padding: 20px 0 !important; /* Adjust padding to maximize readable text scale */
 }
 
+/* SEO Article Section */
+.seo-article-section {
+  padding: 60px 0 40px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 60px;
+}
 
+.seo-article-container {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.seo-article-container h2 {
+  font-family: var(--font-secondary);
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 24px;
+  text-align: center;
+  color: var(--text-primary);
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.seo-article-container h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 32px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.seo-article-container p {
+  margin-bottom: 18px;
+  font-size: 14.5px;
+}
+
+.seo-article-container strong {
+  color: var(--text-primary);
+}
